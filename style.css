@@ -17,10 +17,6 @@
     flex: 1;
 }
 
-.hovered {
-    background-color: black;
-}
-
 .button-container {
     display: flex;
     justify-content: center;
@@ -30,4 +26,8 @@
 .outer-container {
     display: flex;
     justify-content: center;
+}
+
+button {
+    font-size: large;
 }

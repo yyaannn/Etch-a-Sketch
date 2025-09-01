@@ -1,7 +1,20 @@
 const container = document.querySelector(".container");
 
 function handleHover(cell) {
-    cell.classList.add("hovered");
+    console.log(cell.style.opacity);
+    if (cell.classList.contains("hovered")) {
+        let [_, color] = cell.style.backgroundColor.split("(");
+        [color, _] = color.split(")");
+        const [r, g, b, opacity] = color.split(",");
+        cell.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${parseFloat(opacity) + 0.1})`;
+
+    } else {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        cell.style.backgroundColor = `rgb(${r}, ${g}, ${b}, 0.1)`;
+        cell.classList.add("hovered");
+    }
 }
 
 function createGrid(squareNumPerSide) {
