@@ -33,7 +33,7 @@ function createGrid(squareNumPerSide) {
     }
 }
 
-createGrid(100);
+createGrid(16);
 
 const button = document.querySelector("button");
 
